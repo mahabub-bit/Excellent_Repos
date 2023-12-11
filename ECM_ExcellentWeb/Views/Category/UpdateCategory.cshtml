@@ -1,0 +1,73 @@
+﻿@model ECM_ExcellentWeb.Models.VM.CategoryUpdateVM
+
+<form asp-action="UpdateCategory">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Category</h1>
+        <hr />
+        <input hidden asp-for="Category.Id" />
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="Category.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Category.Id" class="form-control" />
+                <span asp-validation-for="Category.Id" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Category.CompanyId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="Category.CompanyId" class="form-select" asp-items="@Model.CompanyList">
+                    <option disabled selecte>--Select Company--</option>
+                </select>
+                <span asp-validation-for="Category.CompanyId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Category.CategoryName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Category.CategoryName" class="form-control" />
+                <span asp-validation-for="Category.CategoryName" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Category.CategoryDescription" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Category.CategoryDescription" class="form-control" rows="5"/>
+                <span asp-validation-for="Category.CategoryDescription" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Category.CategoryImage" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Category.CategoryImage" class="form-control" />
+                <span asp-validation-for="Category.CategoryImage" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexCategory" asp-controller="Category" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Update" class="btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

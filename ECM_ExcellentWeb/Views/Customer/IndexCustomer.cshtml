@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ECM_ExcellentWeb.Model.Dto.CustomerDTO>
+<br />
+<div class="container p-4 border">
+    <div class="col">
+        <h1 class="text-primary">Customer List</h1>
+    </div>
+    <div class="col text-end pt-1">
+        <a asp-contoller="Customer" asp-action="CreateCustomer" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Customer</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Customer Id
+                </th>
+                <th>
+                    Customer Name
+                </th>
+                <th>
+                    Customer Address
+                </th>
+                <th>
+                    Customer Mobile
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.CustomerAddress</td>
+                    <td>@item.CustomerMobile</td>
+                    <td>
+                        <a asp-contoller="Customer" asp-action="UpdateCustomer" asp-route-customerId="@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
+                        <a asp-contoller="Customer" asp-action="DeleteCustomer" asp-route-customerId="@item.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

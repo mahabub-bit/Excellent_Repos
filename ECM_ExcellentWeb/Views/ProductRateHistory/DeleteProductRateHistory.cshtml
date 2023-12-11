@@ -1,0 +1,84 @@
+﻿@model ECM_ExcellentWeb.Models.VM.ProductRHDeleteVM
+
+<form asp-action="DeleteProductRateHistory">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Delete Product Rate History</h1>
+        <hr />
+        <input hidden asp-for="ProductRateHistory.Id" />
+
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.Id" class="form-control" />
+                <span asp-validation-for="ProductRateHistory.Id" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.ProductId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.ProductId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.CategoryId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.CategoryId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.CategoryTypeId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.CategoryTypeId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.DateTime" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.DateTime" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.Daily_Product_Price" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.Daily_Product_Price" disabled class="form-control" rows="5" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ProductRateHistory.PRH_AddColunm" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="ProductRateHistory.PRH_AddColunm" disabled class="form-control" />
+            </div>
+
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexProductRateHistory" asp-controller="ProductRateHistory" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

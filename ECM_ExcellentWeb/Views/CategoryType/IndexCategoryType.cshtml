@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ECM_ExcellentWeb.Model.Dto.CategoryTypeDTO>
+<br />
+<div class="row pb-2">
+    <div class="col">
+        <h1 class="text-primary">CategoryType List</h1>
+    </div>
+    <div class="col text-end pt-1">
+        <a asp-contoller="CategoryType" asp-action="CreateCategoryType" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New CategoryType</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Category Id
+                </th>
+                <th>
+                    CategoryType Name
+                </th>
+                <th>
+                    CategoryType Description
+                </th>
+                <th>
+                    CategoryType Description 2
+                </th>
+                <th>
+                    CategoryType Description 3
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.CatTypeName</td>
+                    <td>@item.CatTypeDesc2</td>
+                    <td>@item.CatTypeDesc3</td>
+                    <td>@item.CatTypeDesc4</td>
+                    <td>
+                        <a asp-contoller="CategoryType" asp-action="UpdateCategoryType" asp-route-categoryTypeId="@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
+                        <a asp-contoller="CategoryType" asp-action="DeleteCategoryType" asp-route-categoryTypeId="@item.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

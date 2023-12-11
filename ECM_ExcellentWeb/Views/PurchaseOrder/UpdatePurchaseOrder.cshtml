@@ -1,0 +1,133 @@
+﻿@model ECM_ExcellentWeb.Models.VM.PurchaseOrderUpdateVM
+
+<form asp-action="UpdatePurchaseOrder">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Purchase Order</h1>
+        <hr />
+        <input hidden asp-for="PurchaseOrder.Id" />
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.Id" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.Id" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Date" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Date" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.PO_Date" class="text-danger"></span>
+            </div>
+
+            @*<div class="col-2">
+                <label asp-for="PurchaseOrder.UserId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.UserId" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.UserId" class="text-danger"></span>
+            </div>*@
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.SupplierId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="PurchaseOrder.SupplierId" class="form-select" asp-items="@Model.SupplierList">
+                    <option disabled selecte>--Select Supplier--</option>
+                </select>
+                <span asp-validation-for="PurchaseOrder.SupplierId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.CompanyId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="PurchaseOrder.CompanyId" class="form-select" asp-items="@Model.CompanyList">
+                    <option disabled selecte>--Select Company--</option>
+                </select>
+                <span asp-validation-for="PurchaseOrder.CompanyId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.ProductId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="PurchaseOrder.ProductId" class="form-select" asp-items="@Model.ProductList">
+                    <option disabled selecte>--Select Product--</option>
+                </select>
+                <span asp-validation-for="PurchaseOrder.ProductId" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Status" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Status" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.PO_Status" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_TotalPrice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_TotalPrice" class="form-control" rows="5" />
+                <span asp-validation-for="PurchaseOrder.PO_TotalPrice" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Invoice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Invoice" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.PO_Invoice" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PaymentDate" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PaymentDate" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.PaymentDate" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PaymentType" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PaymentType" class="form-control" />
+                <span asp-validation-for="PurchaseOrder.PaymentType" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexPurchaseOrder" asp-controller="PurchaseOrder" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Update" class="btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

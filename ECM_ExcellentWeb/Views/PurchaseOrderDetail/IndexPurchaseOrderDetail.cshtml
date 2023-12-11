@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ECM_ExcellentWeb.Model.Dto.PurchaseOrderDetailDTO>
+<br />
+<div class="row pb-2">
+    <div class="col">
+        <h1 class="text-primary">Purchase Order Detail List</h1>
+    </div>
+    <div class="col text-end pt-1">
+        <a asp-contoller="PurchaseOrderDetail" asp-action="CreatePurchaseOrderDetail" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Purchase Order Detail</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Purchase Order ID
+                </th>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Purchase Order Detail Quantity
+                </th>
+                <th>
+                    Purchase Order Detail Unit Price
+                </th>
+                <th>
+                    Purchase Order Detail TotalPrice
+                </th>
+                <th>
+                    Purchase Order Detail Discount
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.PurchaseId</td>
+                    <td>@item.Product.PName</td>
+                    <td>@item.PodQty</td>
+                    <td>@item.PodUnitPrice</td>
+                    <td>@item.PodTotalPrice</td>
+                    <td>@item.PodDiscount</td>
+                    <td></td>
+                    <td>
+                        <a asp-contoller="PurchaseOrderDetail" asp-action="UpdatePurchaseOrderDetail" asp-route-purchaseOrderDetailId="@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
+                        <a asp-contoller="PurchaseOrderDetail" asp-action="DeletePurchaseOrderDetail" asp-route-purchaseOrderDetailId="@item.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

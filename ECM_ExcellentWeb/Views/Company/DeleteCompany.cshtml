@@ -1,0 +1,114 @@
+﻿@model ECM_ExcellentWeb.Model.Dto.CompanyDTO
+<form asp-action="DeleteCompany">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Delete Company</h1>
+        <hr />
+        
+        <input hidden asp-for="Id" />
+
+        <div class="row">
+
+            <div class="col-2">
+                <label asp-for="CName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CName" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CAddress" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CAddress" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CCity" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CCity" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CState" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CState" disabled class="form-control" rows="5"></input>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CPostalCode" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CPostalCode" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBusinessPhone" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBusinessPhone" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CGST" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CGST" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBank" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBank" disabled class="form-control"></input>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBankAccount" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBankAccount" disabled class="form-control"></input>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBankBranch" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBankBranch" disabled class="form-control"></input>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CIFSC" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CIFSC" disabled class="form-control"></input>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexCompany" asp-controller="Company" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

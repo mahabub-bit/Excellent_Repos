@@ -1,0 +1,125 @@
+﻿@model ECM_ExcellentWeb.Model.Dto.CompanyCreateDTO
+<form asp-action="CreateCompany">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Create Company</h1>
+        <hr />
+
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="CName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CName" class="form-control" />
+                <span asp-validation-for="CName" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CAddress" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CAddress" class="form-control" />
+                <span asp-validation-for="CAddress" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CCity" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CCity" class="form-control" />
+                <span asp-validation-for="CCity" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CState" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CState" class="form-control" rows="5"></input>
+                <span asp-validation-for="CState" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CPostalCode" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CPostalCode" class="form-control" />
+                <span asp-validation-for="CPostalCode" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBusinessPhone" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBusinessPhone" class="form-control" />
+                <span asp-validation-for="CBusinessPhone" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CGST" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CGST" class="form-control" />
+                <span asp-validation-for="CGST" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBank" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBank" class="form-control"></input>
+                <span asp-validation-for="CBank" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBankAccount" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBankAccount" class="form-control"></input>
+                <span asp-validation-for="CBankAccount" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CBankBranch" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CBankBranch" class="form-control"></input>
+                <span asp-validation-for="CBankBranch" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CIFSC" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CIFSC" class="form-control"></input>
+                <span asp-validation-for="CIFSC" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexCompany" asp-controller="Company" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

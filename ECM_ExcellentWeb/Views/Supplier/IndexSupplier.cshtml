@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ECM_ExcellentWeb.Model.Dto.SupplierDTO>
+<br />
+<div class="row pb-2">
+    <div class="col">
+        <h1 class="text-primary">Supplier List</h1>
+    </div>
+    <div class="col text-end pt-1">
+        <a asp-contoller="Supplier" asp-action="CreateSupplier" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Supplier</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    CompanyId
+                </th>
+                <th>
+                    Supplier Company Name
+                </th>
+                <th>
+                    Supplier Name
+                </th>
+                <th>
+                    Supplier Email
+                </th>
+                <th>
+                    Supplier Business Phone
+                </th>
+                <th>
+                    Supplier Mobile Phone
+                </th>
+                <th>
+                    Supplier Details
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Company.CName</td>
+                    <td>@item.Supplier_Company_Name</td>
+                    <td>@item.Supplier_Name</td>
+                    <td>@item.Supplier_Email</td>
+                    <td>@item.Supplier_Business_Phone</td>
+                    <td>@item.Supplier_Moblie_Phone</td>
+                    <td>@item.Supplier_D</td>
+                    <td>
+                        <a asp-contoller="Supplier" asp-action="UpdateSupplier" asp-route-supplierId="@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
+                        <a asp-contoller="Supplier" asp-action="DeleteSupplier" asp-route-supplierId="@item.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

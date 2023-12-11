@@ -1,0 +1,83 @@
+﻿@model ECM_ExcellentWeb.Models.VM.PurchaseOrderDetailDeleteVM
+
+<form asp-action="DeletePurchaseOrderDetail">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Delete Purchase Order Detail</h1>
+        <hr />
+        <input hidden asp-for="PurchaseOrderDetail.Id" />
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.Id" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.PurchaseId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.PurchaseId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.ProductId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.ProductId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.PodQty" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.PodQty" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.PodUnitPrice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.PodUnitPrice" disabled class="form-control" rows="5" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.PodTotalPrice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.PodTotalPrice" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrderDetail.PodDiscount" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrderDetail.PodDiscount" disabled class="form-control" />
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexPurchaseOrderDetail" asp-controller="PurchaseOrderDetail" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

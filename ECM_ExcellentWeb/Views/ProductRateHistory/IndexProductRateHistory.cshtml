@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ECM_ExcellentWeb.Model.Dto.ProductRateHistoryDTO>
+<br />
+<div class="row pb-2">
+    <div class="col">
+        <h1 class="text-primary">ProductRateHistory List</h1>
+    </div>
+    <div class="col text-end pt-1">
+        <a asp-contoller="Product" asp-action="CreateProductRateHistory" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New ProductRateHistory</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Daily Product Price
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    CategoryType
+                </th>
+                <th>
+                    PRH Add_Colunm
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Product.PName</td>
+                    <td>@item.DateTime</td>
+                    <td>@item.Daily_Product_Price</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.CategoryType.CatTypeName</td>
+                    <td>@item.PRH_AddColunm</td>
+                    <td>
+                        <a asp-contoller="ProductRateHistory" asp-action="UpdateProductRateHistory" asp-route-productRateHistoryId="@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> </a>
+                        <a asp-contoller="ProductRateHistory" asp-action="DeleteProductRateHistory" asp-route-productRateHistoryId="@item.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

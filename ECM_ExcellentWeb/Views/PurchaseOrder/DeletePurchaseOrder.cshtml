@@ -1,0 +1,116 @@
+﻿@model ECM_ExcellentWeb.Models.VM.PurchaseOrderDeleteVM
+
+<form asp-action="DeletePurchaseOrder">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Delete Purchase Order</h1>
+        <hr />
+        <input hidden asp-for="PurchaseOrder.Id" />
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.Id" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Date" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Date" disabled class="form-control" />
+            </div>
+
+            @*<div class="col-2">
+                <label asp-for="PurchaseOrder.UserId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.UserId" disabled class="form-control" />
+            </div>*@
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.SupplierId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.SupplierId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.CompanyId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.CompanyId" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.ProductId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.ProductId" disabled class="form-control" />
+            </div>
+
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Status" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Status" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_TotalPrice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_TotalPrice" disabled class="form-control" rows="5" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PO_Invoice" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PO_Invoice" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PaymentDate" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PaymentDate" disabled class="form-control" />
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PurchaseOrder.PaymentType" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="PurchaseOrder.PaymentType" disabled class="form-control" />
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexPurchaseOrder" asp-controller="PurchaseOrder" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

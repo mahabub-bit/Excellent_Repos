@@ -1,0 +1,101 @@
+﻿@model ECM_ExcellentWeb.Models.VM.CustomerAddressUpdateVM
+
+<form asp-action="UpdateCustomerAddress">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Customer Address</h1>
+        <hr />
+        <input hidden asp-for="CustomerAddress.Id" />
+
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.Id" class="form-control" />
+                <span asp-validation-for="CustomerAddress.Id" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.CustomerId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="CustomerAddress.CustomerId" class="form-select" asp-items="@Model.CustomerList">
+                    <option disabled selecte>--Select Customer--</option>
+                </select>
+                <span asp-validation-for="CustomerAddress.CustomerId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipHNo" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipHNo" class="form-control" />
+                <span asp-validation-for="CustomerAddress.ShipHNo" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipStreet" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipStreet" class="form-control" rows="5" />
+                <span asp-validation-for="CustomerAddress.ShipStreet" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipCity" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipCity" class="form-control" />
+                <span asp-validation-for="CustomerAddress.ShipCity" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipState" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipState" class="form-control" />
+                <span asp-validation-for="CustomerAddress.ShipState" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipCountry" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipCountry" class="form-control" />
+                <span asp-validation-for="CustomerAddress.ShipCountry" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="CustomerAddress.ShipZip" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="CustomerAddress.ShipZip" class="form-control" />
+                <span asp-validation-for="CustomerAddress.ShipZip" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexCustomerAddress" asp-controller="CustomerAddress" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Update" class="btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

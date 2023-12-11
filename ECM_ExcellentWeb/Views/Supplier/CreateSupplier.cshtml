@@ -1,0 +1,101 @@
+﻿@model ECM_ExcellentWeb.Models.VM.SupplierCreateVM
+
+<form asp-action="CreateSupplier">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Create Supplier</h1>
+        <hr />
+
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Id" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Id" class="form-control" />
+                <span asp-validation-for="Supplier.Id" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.CompanyId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <select asp-for="Supplier.CompanyId" class="form-select" asp-items="@Model.CompanyList">
+                    <option disabled selecte>--Select Company--</option>
+                </select>
+                <span asp-validation-for="Supplier.CompanyId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_Company_Name" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_Company_Name" class="form-control" />
+                <span asp-validation-for="Supplier.Supplier_Company_Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_Name" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_Name" class="form-control" rows="5" />
+                <span asp-validation-for="Supplier.Supplier_Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_Email" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_Email" class="form-control" />
+                <span asp-validation-for="Supplier.Supplier_Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_Business_Phone" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_Business_Phone" class="form-control" />
+                <span asp-validation-for="Supplier.Supplier_Business_Phone" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_Moblie_Phone" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_Moblie_Phone" class="form-control" />
+                <span asp-validation-for="Supplier.Supplier_Moblie_Phone" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Supplier.Supplier_D" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+
+            <div class="col-10 pb-3">
+                <input asp-for="Supplier.Supplier_D" class="form-control" />
+                <span asp-validation-for="Supplier.Supplier_D" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-5 offset-2">
+                <a asp-action="IndexSupplier" asp-controller="Supplier" class="btn-primary btn form-control">Back To List</a>
+            </div>
+
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
